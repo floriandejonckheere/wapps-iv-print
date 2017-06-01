@@ -11,6 +11,92 @@
   </head>
   <body>
 <pre>
+src
+└── java
+    ├── config
+    │   ├── core
+    │   │   └── SpringMvcInitializer.java
+    │   └── WebConfig.java
+    ├── controller
+    │   ├── beer
+    │   │   └── BeerController.java
+    │   ├── contacts
+    │   │   └── ContactsController.java
+    │   ├── equation
+    │   │   ├── EquationController.java
+    │   │   └── Equation.java
+    │   ├── game
+    │   │   └── GameController.java
+    │   ├── IndexController.java
+    │   ├── inventory
+    │   │   └── InventoryController.java
+    │   └── newsletter
+    │       └── NewsletterController.java
+    ├── domain
+    │   ├── beer
+    │   │   ├── BeerExpertBean.java
+    │   │   ├── Beer.java
+    │   │   ├── ColorBean.java
+    │   │   └── ExpertBean.java
+    │   ├── contacts
+    │   │   ├── Contact.java
+    │   │   └── ContactService.java
+    │   ├── equation
+    │   │   └── EquationService.java
+    │   ├── game
+    │   │   ├── Game.java
+    │   │   └── GameService.java
+    │   ├── inventory
+    │   │   ├── Crease.java
+    │   │   ├── Product.java
+    │   │   ├── ProductManager.java
+    │   │   └── SimpleProductManager.java
+    │   └── newsletter
+    │       ├── FrameworkBean.java
+    │       └── Newsletter.java
+    ├── resources
+    │   └── messages.properties
+    ├── service
+    │   └── EquationGenerator.java
+    ├── ValidationMessages.properties
+    └── validator
+        └── EquationValidator.java
+web
+├── resources
+│   └── css
+│       └── style.css
+└── WEB-INF
+    ├── jax-ws-catalog.xml
+    ├── jsp
+    │   ├── beer
+    │   │   ├── formResult.jsp
+    │   │   └── formView.jsp
+    │   ├── contacts
+    │   │   ├── contactsView.jsp
+    │   │   ├── contactView.jsp
+    │   │   └── editView.jsp
+    │   ├── equation
+    │   │   ├── formView.jsp
+    │   │   └── selectView.jsp
+    │   ├── game
+    │   │   ├── formView.jsp
+    │   │   └── gameView.jsp
+    │   ├── index.jsp
+    │   ├── inventory
+    │   │   ├── formView.jsp
+    │   │   └── inventoryView.jsp
+    │   └── newsletter
+    │       └── formView.jsp
+    ├── web.xml
+    └── wsdl
+        └── localhost_35407
+            └── MasterApp
+                ├── EquationGenerator.wsdl
+                └── EquationGenerator.xsd_1.xsd
+
+</pre>
+<div class="page-break"></div>
+<pre>
 ==> src/java/config/core/SpringMvcInitializer.java <==
 package config.core;
 
