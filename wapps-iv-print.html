@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Apps IV</title>
+
+    <style>
+      pre {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+  <body>
+    <pre>
+/** config.WebConfig **/
+
+package config;
+
+@Configuration
+@EnableWebMvc
+@ComponentScan("controller")
+public class WebConfig extends WebMvcConfigurerAdapter {
+
+    @Bean
+    public IMyService myService() {
+        return new MyService();
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/css/**").addResourceLocations("resources/css/");
+    }
+
+    @Bean
+    public ViewResolver viewResolver() {
+
+        InternalResourceViewResolver resolver
+                = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/jsp/");
+        resolver.setSuffix(".jsp");
+        return resolver;
+    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("resources/messages");
+        return messageSource;
+    }
+}
+    </pre>
+
+    <pre>
+/** config.core.SpringMvcInitializer **/
+
+package config.core;
+
+public class SpringMvcInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[]{WebConfig.class};
+    }
+
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return null;
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
+
+}
+    </pre>
+  </body>
+</html>
